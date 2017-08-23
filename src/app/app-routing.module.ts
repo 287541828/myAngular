@@ -7,14 +7,14 @@ import { ProductDescComponent } from "./product-desc/product-desc.component";
 import { ProductSellComponent } from "./product-sell/product-sell.component";
 
 const routes: Routes = [
-    { path: '', redirectTo: '/product', pathMatch: 'full' },
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent, },
     {
         path: 'product/:id', component: ProductComponent, children:
         [
             { path: '', component: ProductDescComponent, },
             { path: 'desc', component: ProductDescComponent, },
-            { path: 'sell', component: ProductSellComponent, },
+            { path: 'sell/:id', component: ProductSellComponent, },
         ]
     },
     { path: '**', component: Code404Component, },
